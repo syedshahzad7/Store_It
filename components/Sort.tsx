@@ -1,5 +1,6 @@
 "use client";
 
+
 import {
   Select,
   SelectContent,
@@ -10,6 +11,8 @@ import {
 import { usePathname, useRouter } from "next/navigation";
 import { sortTypes } from "@/constants";
 
+
+
 const Sort = () => {
   const path = usePathname();
   const router = useRouter();
@@ -17,6 +20,7 @@ const Sort = () => {
   const handleSort = (value: string) => {
     router.push(`${path}?sort=${value}`);
   };
+
 
   return (
     <Select onValueChange={handleSort} defaultValue={sortTypes[0].value}>
@@ -37,5 +41,7 @@ const Sort = () => {
     </Select>
   );
 };
+
+
 
 export default Sort;
